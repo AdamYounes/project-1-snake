@@ -42,7 +42,7 @@ pen.color("white")
 pen.penup()
 pen.hideturtle()
 pen.goto(0, 260)
-pen.write("Score: 0  High score: 0", align="center", font=("courier", 24, "normal" ))
+pen.write("Score: 0  High score: 0", align="center", font=("Arial", 24, "normal" ))
 
 # def keypresses
 
@@ -92,7 +92,7 @@ screen.onkeypress(go_right, "d")
 while True:
     screen.update()
 
-    # The immortal way...
+    # The mortal way...
     if head.xcor()>280 or head.xcor()<-280 or head.ycor()>280 or head.ycor()<-280:
         time.sleep(1)
         head.goto(0,0)
@@ -111,7 +111,7 @@ while True:
         delay = 0.1
 
         pen.clear()
-        pen.write("score: {}  High Score {}".format(score, high_score), align="center", font=("courier", 24, "normal" ))
+        pen.write("score: {}  High Score {}".format(score, high_score), align="center", font=("Arial", 24, "normal" ))
 
 
     if head.distance(food) < 20:
@@ -140,7 +140,7 @@ while True:
 
 
         pen.clear()
-        pen.write("score: {}  High Score {}".format(score, high_score), align="center", font=("courier", 24, "normal" ))
+        pen.write("score: {}  High Score {}".format(score, high_score), align="center", font=("Arial", 24, "normal" ))
 
     # tail .2
     for index in range(len(segments)-1, 0, -1):
@@ -175,7 +175,7 @@ while True:
             delay = 0.1
 
             pen.clear()
-            pen.write("score: {}  High Score {}".format(score, high_score), align="center", font=("courier", 24, "normal" ))
+            pen.write("score: {}  High Score {}".format(score, high_score), align="center", font=("Arial", 24, "normal" ))
     
     time.sleep(delay)
 
