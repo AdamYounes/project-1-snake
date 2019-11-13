@@ -42,7 +42,7 @@ pen.color("white")
 pen.penup()
 pen.hideturtle()
 pen.goto(0, 260)
-pen.write("Score: 0  High score: 0", align="center", font=("Arial", 24, "normal" ))
+pen.write("Score: 0  High Score: 0", align="center", font=("Arial", 24, "normal" ))
 
 # def keypresses
 
