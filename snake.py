@@ -1,10 +1,12 @@
 
+# Inspired by Christian Thompsons snake.
+
 import turtle
 import time
 import random
 delay = 0.1
 
-#score
+# score
 score = 0
 high_score = 0
 
@@ -63,7 +65,6 @@ def go_right():
         head.direction = "right"
 
 # def movement
-
 def move():
     if head.direction == "up":
         y = head.ycor()
@@ -102,7 +103,6 @@ while True:
         for segment in segments:
             segment.goto(1000,1000)
 
-
         segments.clear()
 
         # reset(score)
@@ -112,7 +112,6 @@ while True:
 
         pen.clear()
         pen.write("score: {}  High Score {}".format(score, high_score), align="center", font=("Arial", 24, "normal" ))
-
 
     if head.distance(food) < 20:
         x = random.randint(-280,280)
@@ -130,14 +129,11 @@ while True:
         # decrease the delay
         delay -= 0.001
 
-
         # score increase
         score += 1
 
         if score > high_score:
             high_score = score
-
-
 
         pen.clear()
         pen.write("score: {}  High Score {}".format(score, high_score), align="center", font=("Arial", 24, "normal" ))
@@ -180,4 +176,3 @@ while True:
     time.sleep(delay)
 
 screen.mainloop()
-
