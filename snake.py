@@ -8,7 +8,11 @@ delay = 0.1
 
 # score
 score = 0
-high_score = 0
+try:
+    with open("highscore.txt", "r") as f:
+        high_score = int(f.read())
+except Exception:
+    high_score = 0
 
 # background
 screen = turtle.Screen()
@@ -44,8 +48,7 @@ pen.color("white")
 pen.penup()
 pen.hideturtle()
 pen.goto(0, 260)
-pen.write("Score: 0  High Score: 0", align="center", font=("Arial", 24, "normal" ))
-
+pen.write("score: {}  High Score {}".format(score, high_score), align="center", font=("Arial", 24, "normal" ))
 # def keypresses
 
 def go_up():
@@ -94,7 +97,7 @@ while True:
     screen.update()
 
     # The mortal way...
-    if head.xcor()>280 or head.xcor()<-280 or head.ycor()>280 or head.ycor()<-280:
+    if head.xcor()>280 or head.xcor()<-280 or head.ycor()>280 or head.ycor()<-280:    
         time.sleep(1)
         head.goto(0,0)
         head.direction = "stop"
@@ -134,6 +137,8 @@ while True:
 
         if score > high_score:
             high_score = score
+            with open("highscore.txt", "w") as f:
+                f.write(str(high_score))
 
         pen.clear()
         pen.write("score: {}  High Score {}".format(score, high_score), align="center", font=("Arial", 24, "normal" ))
