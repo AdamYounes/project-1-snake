@@ -50,14 +50,14 @@ pen.hideturtle()
 pen.goto(0, 260)
 pen.write("score: {}  High Score {}".format(score, high_score), align="center", font=("Arial", 24, "normal" ))
 
-pen = turtle.Turtle()
-pen.speed(0)
-pen.shape("circle")
-pen.color("blue")
-pen.penup()
-pen.hideturtle()
-pen.goto(0, 240)
-pen.write("Forward : W   Right : D   Left : A", align="center", font=("arial", 16, "normal"))
+controls = turtle.Turtle()
+controls.speed(0)
+controls.shape("circle")
+controls.color("blue")
+controls.penup()
+controls.hideturtle()
+controls.goto(0, 240)
+controls.write("Forward : W   Right : D   Left : A   Down : S", align="center", font=("arial", 16, "normal"))
 # def keypresses
 
 def go_up():
@@ -125,8 +125,7 @@ while True:
         pen.clear()
         pen.write("score: {}  High Score {}".format(score, high_score), align="center", font=("Arial", 24, "normal" ))
 
-        pen.clear()
-        pen.write("Forward : W   Right : D   Left : A", align="center", font=("arial", 16, "normal"))
+        
 
     if head.distance(food) < 20:
         x = random.randint(-280,280)
@@ -155,8 +154,7 @@ while True:
         pen.clear()
         pen.write("score: {}  High Score {}".format(score, high_score), align="center", font=("Arial", 24, "normal" ))
         
-        pen.clear()
-        pen.write("Forward : W   Right : D   Left : A", align="center", font=("arial", 16, "normal"))
+        
 
     # tail .2
     for index in range(len(segments)-1, 0, -1):
@@ -193,8 +191,7 @@ while True:
             pen.clear()
             pen.write("score: {}  High Score {}".format(score, high_score), align="center", font=("Arial", 24, "normal" ))
 
-            pen.clear()
-            pen.write("Forward : W   Right : D   Left : A", align="center", font=("arial", 16, "normal"))
+            
     
     time.sleep(delay)
 
